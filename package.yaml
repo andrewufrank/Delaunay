@@ -50,6 +50,7 @@ default-extensions: TypeFamilies
                     , PatternSynonyms
                     , ViewPatterns       
                     , TypeApplications # added af
+                    , DeriveDataTypeable # added af
 # tests:
 #   test1:
 #     main: ExampleTesting.hs

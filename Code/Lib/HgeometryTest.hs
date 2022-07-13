@@ -42,14 +42,16 @@ import           Data.Semigroup
 -- import           Ipe.Color
 -- import           Options.Applicative
 
+import Linear.V2
+
 ----------------------------the delaunay example https://raw.githubusercontent.com/noinia/hgeometry/master/hgeometry-examples/src/Demo/Delaunay.hs
 
-type R = RealNumber 5
+-- type R = RealNumber 5
 
-data Options = Options { _inPath    :: FilePath
-                       , _outFile   :: FilePath
-                       }
-               deriving Data
+-- data Options = Options { _inPath    :: FilePath
+--                        , _outFile   :: FilePath
+--                        }
+--                deriving Data
 
 -- options :: ParserInfo Options
 -- options = info (helper <*> parser)
@@ -67,9 +69,9 @@ data Options = Options { _inPath    :: FilePath
 
 mainAF :: IO ()
 mainAF  = do 
-    pts <- readAllFrom @(Point 2 R) inFile
-    let pts' = NonEmpty.fromList pts
-        dt   = delaunayTriangulation $ pts' 
+    -- pts <- readAllFrom @(Point 2 R) inFile
+    -- let pts' = NonEmpty.fromList pts
+    --     dt   = delaunayTriangulation $ pts' 
     return ()
 
 
@@ -112,8 +114,19 @@ mainAF  = do
   -- const Nothing
 
 
+-- from gunslinger
+data Input = Input { _luke  :: Point 2 Int
+                   , _hatch :: Point 2 Int
+                   , _daltons :: [Point 2 Int]
+                   } deriving (Show,Eq)
+
+-- p1 :: Vector 2 Int 
+p1 = V2 1 2 ^+^ V2 3 4 -- works! needs Linear.V2
+-- NonEmpty.fromList [4, 5]
+-- p2 :: Point 2 Int
 hgeometry:: IO ()
 hgeometry = do 
     putIOwords ["hgeometry"]
+    putIOwords ["p1", showT p1]
 
     return ()
