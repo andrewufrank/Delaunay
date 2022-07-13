@@ -55,13 +55,16 @@ ps = [V2 0 0, V2 1 1, V2 0 2, V2 2 2]
 psne = fromList ps :: NonEmpty (V2 Int)
 
 -- q :: Point 2 Real 
-q1 = Point2 4.5 3.3
+q1 = Point2 4.5 3.3 :+ 'a'
 
 
-qs :: [Point 2 (RealNumber 5)]
-qs = [Point2  0 0, Point2  1 1, Point2  0 2, Point2  2 2]
+qs :: [Point 2 Float :+ Char]
+qs = [(Point2  0 0) :+ 'a' , Point2  1 1 :+ 'b' , Point2  0 2  :+ 'c', Point2  2 2  :+ 'd']
 
-qsne = fromList qs   
+-- qsne = fmap (:+()) $ fromList qs
+qsne =  fromList qs
+
+
 t1 = delaunayTriangulation qsne 
 -- NonEmpty.fromList [4, 5]
 -- p2 :: Point 2 Int
