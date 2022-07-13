@@ -21,15 +21,11 @@ library
       Code
   ghc-options: -Wall
   build-depends:
-      array >=0.5
-    , base ==4.*
+      base ==4.*
     , hgeometry
     , hgeometry-combinatorial
-    , lens
     , linear
-    , semigroups
     , uniformBase
-    , vector-circular
   default-language: Haskell2010
 
 executable foo
@@ -41,13 +37,9 @@ executable foo
   ghc-options: -Wall
   build-depends:
       ShortestPath
-    , array >=0.5
     , base ==4.*
     , hgeometry
     , hgeometry-combinatorial
-    , lens
     , linear
-    , semigroups
     , uniformBase
-    , vector-circular
   default-language: Haskell2010

@@ -1,6 +1,13 @@
 -----------------------------------------------------------------------------
 --
--- Module      :   a more elaborate sub
+-- Module      :   an example how to use the triangulation from hgeometry 
+
+-- dependencies:
+--  - hgeometry 
+--   - hgeometry-combinatorial
+--   - linear
+-- all language extensions are explicitely in the file
+
 -----------------------------------------------------------------------------
 {-# LANGUAGE FlexibleContexts      #-}
 {-# LANGUAGE FlexibleInstances     #-}
@@ -49,6 +56,7 @@ import Data.Ext ( type (:+)(..) )
 
 import Linear.V2 ( V2(..) )
 import Data.List.NonEmpty ( NonEmpty, fromList )
+import Algorithms.Geometry.DelaunayTriangulation.Types (toPlanarSubdivision)
 
 
 
@@ -63,13 +71,15 @@ q1 = Point2 4.5 3.3 :+ 'a'
 
 
 qs :: [Point 2 Float :+ Char]
-qs = [(Point2  0 0) :+ 'a' , Point2  1 1 :+ 'b' , Point2  0 2  :+ 'c', Point2  2 2  :+ 'd']
+qs = [(Point2  0 0) :+ 'a' , Point2  1.5 1.5 :+ 'b' , Point2  0 2  :+ 'c', Point2  2 0  :+ 'd']
+qsColl = [(Point2  0 0) :+ 'a' , Point2  1 1 :+ 'b' , Point2  0 2  :+ 'c', Point2  2 0  :+ 'd']-- fails with b 1 1 ??
 
 -- qsne = fmap (:+()) $ fromList qs
 qsne =  fromList qs
 
 
 t1 = delaunayTriangulation qsne 
+g1 = toPlanarSubdivision t1
 -- NonEmpty.fromList [4, 5]
 -- p2 :: Point 2 Int
 mainDel1:: IO ()
@@ -78,6 +88,8 @@ mainDel1 = do
     putIOwords ["p1", showT p1]
     putIOwords ["ps", showT ps]
     putIOwords ["qs", showT qs]
+    -- putIOwords ["qsFails", showT . delaunayTriangulation . fromList $ qsColl]
     putIOwords ["t1", showT t1]
+    putIOwords ["g1", showT g1]
 
     return ()
