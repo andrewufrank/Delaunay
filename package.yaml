@@ -19,6 +19,8 @@ dependencies:
   - hgeometry 
   - hgeometry-combinatorial
   - linear
+
+  - aeson-pretty
   # - array                    >= 0.5
   # - hgeometry
   # # - hgeometry-ipe            >= 0.14

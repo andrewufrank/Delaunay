@@ -21,7 +21,8 @@ library
       Code
   ghc-options: -Wall
   build-depends:
-      base ==4.*
+      aeson-pretty
+    , base ==4.*
     , hgeometry
     , hgeometry-combinatorial
     , linear
@@ -37,6 +38,7 @@ executable foo
   ghc-options: -Wall
   build-depends:
       ShortestPath
+    , aeson-pretty
     , base ==4.*
     , hgeometry
     , hgeometry-combinatorial
