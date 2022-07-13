@@ -41,16 +41,16 @@ executables:
       - ShortestPath
       # - TestSimple
 
-default-extensions: TypeFamilies
-                    , GADTs
-                    , DataKinds
-                    , TypeOperators
-                    , ConstraintKinds
-                    , PolyKinds
-                    , PatternSynonyms
-                    , ViewPatterns       
-                    , TypeApplications  
-                    , DeriveDataTypeable  
+# default-extensions: TypeFamilies
+#                     , GADTs
+#                     , DataKinds
+#                     , TypeOperators
+#                     , ConstraintKinds
+#                     , PolyKinds
+#                     , PatternSynonyms
+#                     , ViewPatterns       
+#                     , TypeApplications  
+#                     , DeriveDataTypeable  
 # tests:
 #   test1:
 #     main: ExampleTesting.hs

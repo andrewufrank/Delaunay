@@ -10,8 +10,13 @@
 {-# LANGUAGE TypeSynonymInstances  #-}
 {-# LANGUAGE OverloadedStrings     #-}
 {-# LANGUAGE TypeApplications     #-}
+{-# LANGUAGE DeriveDataTypeable #-}
+{-# LANGUAGE PolyKinds #-}
+{-# LANGUAGE DataKinds #-}
+{-# LANGUAGE TypeOperators #-}
+
 {-# OPTIONS_GHC -Wno-missing-signatures #-}
-{-# OPTIONS_GHC -Wno-unused-imports #-}
+-- {-# OPTIONS_GHC -Wno-unused-imports #-}
 
 module Lib.TryDelaunay 
      where
@@ -21,30 +26,29 @@ import UniformBase
 
 import Data.Geometry
 
-{-# LANGUAGE ScopedTypeVariab#-}
-{-# LANGUAGE DeriveDataTypeable #-}
-{-# LANGUAGE PolyKinds #-}
+
 -- module Demo.Delaunay where
 
-import           Algorithms.Geometry.DelaunayTriangulation.DivideAndConquer
-import           Algorithms.Geometry.DelaunayTriangulation.Types
-import           Algorithms.Geometry.EuclideanMST
-import           Control.Lens
-import           Data.Data
-import           Data.Ext
+import Algorithms.Geometry.DelaunayTriangulation.DivideAndConquer
+    ( delaunayTriangulation )
+-- import           Algorithms.Geometry.DelaunayTriangulation.Types
+-- import           Algorithms.Geometry.EuclideanMST
+-- import           Control.Lens
+-- import           Data.Data
+import Data.Ext ( type (:+)(..) )
 -- import           Geometry
 -- import           Geometry.PlanarSubdivision
 -- import           Geometry.PlanarSubdivision.Draw
-import qualified Data.List.NonEmpty as NonEmpty
-import           Data.RealNumber.Rational
-import           Data.Semigroup
+-- import qualified Data.List.NonEmpty as NonEmpty
+-- import           Data.RealNumber.Rational
+-- import           Data.Semigroup
 -- import           Data.Tree.Draw
 -- import           Ipe
 -- import           Ipe.Color
 -- import           Options.Applicative
 
-import Linear.V2
-import Data.List.NonEmpty
+import Linear.V2 ( V2(..) )
+import Data.List.NonEmpty ( NonEmpty, fromList )
 
 
 

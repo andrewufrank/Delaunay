@@ -14,14 +14,11 @@ build-type:     Simple
 
 library
   exposed-modules:
-      Lib.HgeometryTest
       Lib.TryDelaunay
   other-modules:
       Paths_ShortestPath
   hs-source-dirs:
       Code
-  default-extensions:
-      TypeFamilies , GADTs , DataKinds , TypeOperators , ConstraintKinds , PolyKinds , PatternSynonyms , ViewPatterns , TypeApplications , DeriveDataTypeable
   ghc-options: -Wall
   build-depends:
       array >=0.5
@@ -41,8 +38,6 @@ executable foo
       Paths_ShortestPath
   hs-source-dirs:
       src
-  default-extensions:
-      TypeFamilies , GADTs , DataKinds , TypeOperators , ConstraintKinds , PolyKinds , PatternSynonyms , ViewPatterns , TypeApplications , DeriveDataTypeable
   ghc-options: -Wall
   build-depends:
       ShortestPath
