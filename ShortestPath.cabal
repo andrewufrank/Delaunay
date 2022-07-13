@@ -6,7 +6,7 @@ cabal-version: 1.12
 
 name:           ShortestPath
 version:        0.2.1
-description:    version 0.2.2 - try a shortest path in the main copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell seems to allow functions and code is simpler than my old dijkstra code
+description:    version 0.2.2 version 0.2.1 - try a shortest path in the main copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell seems to allow functions and code is simpler than my old dijkstra code naive, incomplete
 license:        BSD2
 license-file:   LICENSE
 build-type:     Simple
@@ -14,6 +14,7 @@ build-type:     Simple
 library
   exposed-modules:
       Lib.Delaunay
+      Lib.FromStackOverflow
       Lib.OpenClass
   other-modules:
       Paths_ShortestPath

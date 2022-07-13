@@ -1,6 +1,7 @@
 -----------------------------------------------------------------------------
 --
 -- Module      :    a test for delaunay from hackage
+-- dependencies cannot be satisfied by cabal 
 --------------------------------------------------------------------------- 
 {-# LANGUAGE FlexibleContexts      #-}
 {-# LANGUAGE FlexibleInstances     #-}
@@ -16,7 +17,8 @@
 module Lib.DirTree   
      where
 
-import Graphics.Triangulation.Delaunay
+import Graphics.Triangulation.Delaunay 
+-- git://github.com/mruegenberg/Delaunay.git
 -- import Uniform.Strings
 
 trianl = triangulate []

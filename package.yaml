@@ -3,7 +3,7 @@ version:        0.2.1
 
 ghc-options: -Wall
 description: 
-  version 0.2.2
+  version 0.2.2 try m ruegenberg graphics.triangulation.delaunay
     version 0.2.1 - try a shortest path in the main 
     copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell
     seems to allow functions and code is simpler than my old 
