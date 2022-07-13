@@ -49,8 +49,8 @@ default-extensions: TypeFamilies
                     , PolyKinds
                     , PatternSynonyms
                     , ViewPatterns       
-                    , TypeApplications # added af
-                    , DeriveDataTypeable # added af
+                    , TypeApplications  
+                    , DeriveDataTypeable  
 # tests:
 #   test1:
 #     main: ExampleTesting.hs
