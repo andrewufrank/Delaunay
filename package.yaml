@@ -1,0 +1,39 @@
+name:           ShortestPath
+version:        0.2.1
+
+ghc-options: -Wall
+description: 
+  version 0.2.2
+    version 0.2.1 - try a shortest path in the main 
+    copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell
+    seems to allow functions and code is simpler than my old 
+    dijkstra code 
+    naive, incomplete
+dependencies:
+  - base == 4.*
+  - delaunay
+#   - uniform-strings
+#   - uniform-convenience
+# #  - test-framework 
+#   - QuickCheck
+#   - HTF
+
+library:
+  source-dirs: .
+
+executables:
+  foo:
+    main: TheMain.hs
+    source-dirs: src
+    # dependencies: 
+      # - TestSimple
+
+# tests:
+#   test1:
+#     main: ExampleTesting.hs
+#     source-dirs: tests
+#     dependencies: 
+#       - TestSimple
+# #      - QuickCheck 
+# #      - test-framework 
+
