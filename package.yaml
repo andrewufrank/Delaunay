@@ -1,8 +1,10 @@
 name:           ShortestPath
-version:        0.2.1
+version:        0.2.3
 
 ghc-options: -Wall
 description: 
+  version 0.2.3 try hgeometry
+
   version 0.2.2 try m ruegenberg graphics.triangulation.delaunay
     version 0.2.1 - try a shortest path in the main 
     copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell
@@ -11,7 +13,18 @@ description:
     naive, incomplete
 dependencies:
   - base == 4.*
-  - delaunay
+  # - delaunay  cannot satisfy dependencies for AC-Vector
+  # - hgeometry
+  - hgeometry ==0.14
+  - uniformBase
+  - array                    >= 0.5
+  - hgeometry
+  - hgeometry-combinatorial
+  # - hgeometry-ipe            >= 0.14
+  - lens
+  - linear
+  - semigroups
+  - vector-circular
 #   - uniform-strings
 #   - uniform-convenience
 # #  - test-framework 
@@ -19,15 +32,24 @@ dependencies:
 #   - HTF
 
 library:
-  source-dirs: .
-
+  source-dirs: Code
 executables:
   foo:
-    main: TheMain.hs
+    main: Main.hs
     source-dirs: src
-    # dependencies: 
+    dependencies: 
+      - ShortestPath
       # - TestSimple
 
+default-extensions: TypeFamilies
+                    , GADTs
+                    , DataKinds
+                    , TypeOperators
+                    , ConstraintKinds
+                    , PolyKinds
+                    , PatternSynonyms
+                    , ViewPatterns       
+                    , TypeApplications # added af
 # tests:
 #   test1:
 #     main: ExampleTesting.hs

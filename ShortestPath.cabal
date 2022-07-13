@@ -5,35 +5,53 @@ cabal-version: 1.12
 -- see: https://github.com/sol/hpack
 
 name:           ShortestPath
-version:        0.2.1
-description:    version 0.2.2 version 0.2.1 - try a shortest path in the main copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell seems to allow functions and code is simpler than my old dijkstra code naive, incomplete
+version:        0.2.3
+description:    version 0.2.3 try hgeometry
+                version 0.2.2 try m ruegenberg graphics.triangulation.delaunay version 0.2.1 - try a shortest path in the main copied from https://stackoverflow.com/questions/14012603/how-to-implement-dijkstra-algorithm-in-haskell seems to allow functions and code is simpler than my old dijkstra code naive, incomplete
 license:        BSD2
 license-file:   LICENSE
 build-type:     Simple
 
 library
   exposed-modules:
-      Lib.Delaunay
-      Lib.FromStackOverflow
-      Lib.OpenClass
+      Lib.HgeometryTest
   other-modules:
       Paths_ShortestPath
   hs-source-dirs:
-      ./
+      Code
+  default-extensions:
+      TypeFamilies , GADTs , DataKinds , TypeOperators , ConstraintKinds , PolyKinds , PatternSynonyms , ViewPatterns , TypeApplications
   ghc-options: -Wall
   build-depends:
-      base ==4.*
-    , delaunay
+      array >=0.5
+    , base ==4.*
+    , hgeometry
+    , hgeometry-combinatorial
+    , lens
+    , linear
+    , semigroups
+    , uniformBase
+    , vector-circular
   default-language: Haskell2010
 
 executable foo
-  main-is: TheMain.hs
+  main-is: Main.hs
   other-modules:
       Paths_ShortestPath
   hs-source-dirs:
       src
+  default-extensions:
+      TypeFamilies , GADTs , DataKinds , TypeOperators , ConstraintKinds , PolyKinds , PatternSynonyms , ViewPatterns , TypeApplications
   ghc-options: -Wall
   build-depends:
-      base ==4.*
-    , delaunay
+      ShortestPath
+    , array >=0.5
+    , base ==4.*
+    , hgeometry
+    , hgeometry-combinatorial
+    , lens
+    , linear
+    , semigroups
+    , uniformBase
+    , vector-circular
   default-language: Haskell2010

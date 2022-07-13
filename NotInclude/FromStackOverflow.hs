@@ -13,7 +13,7 @@
 {-# OPTIONS_GHC -Wno-unused-imports #-}
 {-# OPTIONS_GHC -Wno-missing-signatures #-}
 
-module Lib.DirTree   
+module Lib.FromStackOverflow
      where
 -- https://stackoverflow.com/questions/49443539/haskell-to-prolog-or-just-prolog-delaunay-triangulation
 
